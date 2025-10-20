@@ -26,7 +26,18 @@ tree->GetEntry(i);
 // do something
 histogram->Fill(object->px, object->py);
 }
-histogram->Draw();
-file->Close();
-delete file;
+auto c1 = new TCanvas("c1","",800,600);
+
+histogram->SetMarkerStyle(20);  //20 means filled circle
+histogram->SetMarkerSize(0.5);
+histogram->Draw("P"); //P for point
+c1->SaveAs("px_vs_py.pdf");
+//draw
+auto c2 = new TCanvas("c2","",800,600);
+tree->Draw("px*py:pz", "magnitude < 0.03", "COLZ");
+c2->SaveAs("pxpy_vs_pz.pdf");
+
+
+//file->Close();
+//delete file;
 }

@@ -11,11 +11,11 @@ public:
 
     Double_t GetMagnitude() const;
     
-    Double_t px;
+    Double_t px; //public, otherwise Getter function needed
     Double_t py;
     Double_t pz;
     Double_t magnitude;
 
-    ClassDef(momentum3D, 1)
+    ClassDef(momentum3D, 1) // makes class "known" to ROOT
       
 };
