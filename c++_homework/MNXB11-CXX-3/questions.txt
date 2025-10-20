@@ -1,0 +1,14 @@
+Question "Please explain the difference in the two" on page 1:
+The first option checks if the macro " __YOUR_CLASS_H__" is not defined (#ifndef) yet. If this is the case the
+macro symbol is defined (#define). This is a maunual way of controlling that a class definition is not seen 
+twice by the compiler. If the macro is already included the file is skipped by the compiler.
+Now, "#pragma once" essentially does the same thing, but it is a compiler directive. It is not standard c++ but a 
+compiler extension which is supported by all major compilers. 
+
+Question: What is the difference between struct and class?    
+In class all the members are automatically private and have to be declared as public. 
+Instead, all the memebers in a struct are automatically public and habe to be declared as private.
+
+Question: Why do we need our class to be derived from the TObject?
+Because all ROOT classes inherit from TObject. This way root knows how to read and write this class. 
+
